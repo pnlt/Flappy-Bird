@@ -42,12 +42,12 @@ while running:
             running = False
         if event.type == column_create_event:
             Column(sprites)
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE and not gamestarted and not gameover:
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1 and not gamestarted and not gameover:
                 gamestarted = True
                 game_start_message.kill()
                 pygame.time.set_timer(column_create_event, 1500)
-            if event.key == pygame.K_ESCAPE and gameover:
+            if event.button == 3 and gameover:
                 gameover = False
                 gamestarted = False
                 sprites.empty()
